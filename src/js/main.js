@@ -52,13 +52,15 @@ let pigModel = null
 let isJump = false
 
 const location = window.location.href
-let src = location + '/libs/onepoly_sim.glb'
+let src = location + '/libs/onepoly_sim3.glb'
 let src2 = location + '/libs/pighead.glb'
 
 if (location === 'http://localhost:3000/') {
-  src = '../libs/onepoly_sim.glb'
+  src = '../libs/onepoly_sim3.glb'
   src2 = '../libs/pighead.glb'
 }
+
+console.log(src);
 
 const loader = new GLTFLoader()
 
@@ -85,6 +87,7 @@ loader.load(
   src,
   // called when the resource is loaded
   function (gltf) {
+    console.log(gltf);
     model = gltf.scene
     meshs = model.children[0].children[0].children[0].children
     console.log(meshs);
