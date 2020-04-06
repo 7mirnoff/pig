@@ -52,11 +52,11 @@ let pigModel = null
 let isJump = false
 
 const location = window.location.href
-let src = location + '/libs/qwe.glb'
+let src = location + '/libs/onepoly_sim.glb'
 let src2 = location + '/libs/pighead.glb'
 
 if (location === 'http://localhost:3000/') {
-  src = '../libs/boxes_1.glb'
+  src = '../libs/onepoly_sim.glb'
   src2 = '../libs/pighead.glb'
 }
 
@@ -68,6 +68,7 @@ loader.load(
   // called when the resource is loaded
   function (gltf) {
     pigModel = gltf.scene.children[0]
+    console.log(pigModel);
   },
   // called while loading is progressing
   function (xhr) {
@@ -85,8 +86,8 @@ loader.load(
   // called when the resource is loaded
   function (gltf) {
     model = gltf.scene
-
     meshs = model.children[0].children[0].children[0].children
+    console.log(meshs);
     meshs.forEach(mesh => {
       // pigModel.scale.set(mesh.scale)
       mesh.geometry = pigModel.geometry
