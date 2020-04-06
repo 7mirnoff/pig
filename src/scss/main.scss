@@ -1,0 +1,36 @@
+@import "node_modules/normalize.css/normalize";
+@import "variables";
+@import "mixins";
+@import "scaffolding";
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#container {
+  height: 100vh;
+}
+
+.bono {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+  font-size: 140px;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
