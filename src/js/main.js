@@ -48,16 +48,19 @@ let meshs = []
 let mixer = null
 let action = null
 let duration = null
-let pigModel = null
+let zModel = null
+let lModel = null
 let isJump = false
 
 const location = window.location.href
 let src = location + '/libs/onepoly_sim3.glb'
-let src2 = location + '/libs/pighead.glb'
+let src2 = location + '/libs/shape_L.glb'
+let src3 = location + '/libs/shape_Z.glb'
 
 if (location === 'http://localhost:3000/') {
   src = '../libs/onepoly_sim3.glb'
-  src2 = '../libs/pighead.glb'
+  src2 = '../libs/shape_L.glb'
+  src3 = '../libs/shape_Z.glb'
 }
 
 console.log(src);
@@ -69,8 +72,25 @@ loader.load(
   src2,
   // called when the resource is loaded
   function (gltf) {
-    pigModel = gltf.scene.children[0]
-    console.log(pigModel);
+    zModel = gltf.scene.children[0]
+    console.log(gltf);
+  },
+  // called while loading is progressing
+  function (xhr) {
+    console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+  },
+  // called when loading has errors
+  function (error) {
+    console.log('An error happened:', error)
+  }
+)
+
+loader.load(
+  // resource URL
+  src3,
+  // called when the resource is loaded
+  function (gltf) {
+    lModel = gltf.scene.children[0]
   },
   // called while loading is progressing
   function (xhr) {
@@ -87,15 +107,19 @@ loader.load(
   src,
   // called when the resource is loaded
   function (gltf) {
-    console.log(gltf);
     model = gltf.scene
     meshs = model.children[0].children[0].children[0].children
-    console.log(meshs);
-    meshs.forEach(mesh => {
-      // pigModel.scale.set(mesh.scale)
-      mesh.geometry = pigModel.geometry
-      mesh.scale.set(0.003, 0.003, 0.003)
-      mesh.material = pigModel.material
+    meshs.forEach((mesh, i) => {
+      // lModel.scale.set(mesh.scale)
+      if (i % 2 === 0) {
+        mesh.geometry = zModel.geometry
+        mesh.material = zModel.material
+      } else {
+        mesh.geometry = lModel.geometry
+        mesh.material = lModel.material
+      }
+
+      mesh.scale.set(0.00003, 0.00003, 0.00003)
     })
 
     model.position.set(0, -0.5, 0)
