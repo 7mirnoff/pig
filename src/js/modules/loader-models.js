@@ -6,11 +6,11 @@ const location = window.location.href
 const models = {}
 
 const sourses = [
-  '/libs/shape_L.glb'
+  '/libs/pighead-texture.glb'
 ]
 
 const loadGLTFs = (cb) => {
-  sourses.forEach(sourse => {
+  sourses.forEach((sourse, index) => {
     let src = location + sourse
 
     if (location === 'http://localhost:3000/') {
@@ -23,7 +23,10 @@ const loadGLTFs = (cb) => {
       // called when the resource is loaded
       function (gltf) {
         models[gltf.scene.children[0].name] = gltf.scene.children[0]
-        cb()
+
+        if (sourses.length === index + 1) {
+          cb()
+        }
       },
       // called while loading is progressing
       function (xhr) {
@@ -35,8 +38,6 @@ const loadGLTFs = (cb) => {
       }
     )
   })
-
-  console.log(models);
 }
 
 export { loadGLTFs, models }

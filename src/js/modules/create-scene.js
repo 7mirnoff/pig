@@ -10,7 +10,7 @@ import {
 import { lerp } from './lerp'
 
 const createScene = () => {
-
+  console.log(models);
   const geometry = new THREE.Geometry()
   geometry.vertices.push(
     new THREE.Vector3(-0.5, -0.5, 0),

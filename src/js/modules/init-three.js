@@ -1,7 +1,7 @@
 import APP from '../app'
 import * as THREE from 'three'
 import { stats } from './add-stats'
-import { createScene } from './create-scene'
+import { createScene } from './test-bono-scene'
 const OrbitControls = require('three-orbit-controls')(THREE)
 
 const canvas = document.getElementById('canvas')
