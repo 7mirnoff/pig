@@ -18,7 +18,8 @@ const createScene = () => {
     new THREE.Vector3(0, 0.5, 0))
   geometry.faces.push(new THREE.Face3(0, 1, 2))
 
-  // const geometry = models['SMOOTHED_Z'].geometry
+  const geometry2 = models['SMOOTHED_Z'].geometry
+  console.log(geometry2);
   // const geometry = new THREE.BoxGeometry(1, 1, 1)
 
   const material = new THREE.MeshPhongMaterial({
