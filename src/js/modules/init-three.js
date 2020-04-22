@@ -25,6 +25,8 @@ const initThree = () => {
     antialias: true
   })
 
+  APP.renderer.setPixelRatio(2)
+
   APP.scene = new THREE.Scene()
   APP.animationPool = {}
 
