@@ -17,18 +17,17 @@ const loadGLTFs = (cb) => {
       src = `..${sourse}`
     }
 
-
-
     loader.load(
       // resource URL
       src,
       // called when the resource is loaded
       function (gltf) {
-        models[gltf.scene.children[0].name] = gltf.scene.children[0]
+        console.log(gltf);
+        // models[gltf.scene.children[0].name] = gltf.scene.children[0]
 
-        if (sourses.length === index + 1) {
-          cb()
-        }
+        // if (sourses.length === index + 1) {
+        //   cb()
+        // }
       },
       // called while loading is progressing
       function (xhr) {

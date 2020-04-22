@@ -11,7 +11,7 @@ const meshs = []
 
 const createScene = () => {
   for (const key in models) {
-    console.log(models);
+    // console.log(models);
     // const mesh = new THREE.Mesh(models[key].geometry, models[key].material)
 
     // meshs.push(mesh)
