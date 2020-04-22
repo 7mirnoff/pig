@@ -39,6 +39,9 @@ const initThree = () => {
 
   // APP.renderer.render(APP.scene, APP.camera)
 
+  APP.clock = new THREE.Clock()
+  APP.delta = APP.clock.getDelta()
+
   const animate = () => {
     window.requestAnimationFrame(animate)
 
@@ -47,6 +50,12 @@ const initThree = () => {
     for (const f in APP.animationPool) {
       APP.animationPool[f]()
     }
+    APP.delta = APP.clock.getDelta()
+
+    // APP.mixer.forEach((index, anim) => {
+    //   APP.mixer[index].update(APP.delta)
+    // })
+
 
     render()
 
