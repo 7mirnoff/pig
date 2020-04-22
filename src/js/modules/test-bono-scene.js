@@ -16,12 +16,12 @@ const createScene = () => {
   model.scale.set(20, 20, 20)
   APP.scene.add(model)
 
-  const duration = models.animations[0].duration
+  APP.duration = models.animations[0].duration
 
-  const mixer = new THREE.AnimationMixer(model)
-  mixer.timeScale = 1
-  const action = mixer.clipAction(models.animations[0])
-  action.play()
+  APP.mixer = new THREE.AnimationMixer(model)
+  APP.mixer.timeScale = 1
+  APP.action = APP.mixer.clipAction(models.animations[0])
+  APP.action.play()
   // for (const key in models) {
   //   // console.log(models);
   //   // const mesh = new THREE.Mesh(models[key].geometry, models[key].material)
