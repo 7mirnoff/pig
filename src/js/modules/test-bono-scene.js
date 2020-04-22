@@ -18,11 +18,11 @@ const createScene = () => {
 
   APP.mixer = []
   APP.action = []
-  models.animations.forEach((index, anim) => {
+  models.animations.forEach((anim, index) => {
     APP.mixer[index] = new THREE.AnimationMixer(model)
     APP.mixer[index].timeScale = 1
     APP.action[index] = APP.mixer[index].clipAction(models.animations[index])
-    // APP.action[index].play()
+    APP.action[index].play()
 
   });
 

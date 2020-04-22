@@ -33,7 +33,7 @@ const initThree = () => {
   createScene()
 
   APP.camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 10000) // в скобочках (угол обзора, порпорции экрана, параметры видимоcти обекта)
-  APP.camera.position.set(0, 0, 10)
+  APP.camera.position.set(0, 250, 300)
 
   APP.controls = new OrbitControls(APP.camera, APP.renderer.domElement)
 
@@ -52,9 +52,9 @@ const initThree = () => {
     }
     APP.delta = APP.clock.getDelta()
 
-    // APP.mixer.forEach((index, anim) => {
-    //   APP.mixer[index].update(APP.delta)
-    // })
+    APP.mixer.forEach((mix, index) => {
+      APP.mixer[index].update(APP.delta)
+    })
 
 
     render()
