@@ -10,14 +10,15 @@ import {
 const meshs = []
 
 const createScene = () => {
-  for (const key in models) {
-    // console.log(models);
-    // const mesh = new THREE.Mesh(models[key].geometry, models[key].material)
+  console.log(models);
+  // for (const key in models) {
+  //   // console.log(models);
+  //   // const mesh = new THREE.Mesh(models[key].geometry, models[key].material)
 
-    // meshs.push(mesh)
+  //   // meshs.push(mesh)
 
-    // APP.scene.add(mesh)
-  }
+  //   // APP.scene.add(mesh)
+  // }
 
   let progress = 0
   const makeAnimationStep = () => {

@@ -3,7 +3,7 @@ import GLTFLoader from 'three-gltf-loader'
 
 const loader = new GLTFLoader()
 const location = window.location.href
-const models = {}
+let models = {}
 
 const sourses = [
   '/libs/stars.glb'
@@ -22,12 +22,12 @@ const loadGLTFs = (cb) => {
       src,
       // called when the resource is loaded
       function (gltf) {
-        console.log(gltf);
+        models = gltf
         // models[gltf.scene.children[0].name] = gltf.scene.children[0]
 
-        // if (sourses.length === index + 1) {
-        //   cb()
-        // }
+        if (sourses.length === index + 1) {
+          cb()
+        }
       },
       // called while loading is progressing
       function (xhr) {
