@@ -6,7 +6,7 @@ const location = window.location.href
 const models = {}
 
 const sourses = [
-  '/libs/pighead-texture.glb'
+  '/libs/stars.glb'
 ]
 
 const loadGLTFs = (cb) => {
@@ -16,6 +16,8 @@ const loadGLTFs = (cb) => {
     if (location === 'http://localhost:3000/') {
       src = `..${sourse}`
     }
+
+
 
     loader.load(
       // resource URL
