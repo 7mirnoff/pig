@@ -27,10 +27,10 @@ const createScene = () => {
 
   console.log(APP)
   APP.mouse = new THREE.Vector3();
-  APP.LeftArm = APP.scene.children[0].children[0].children[0].children[0].children[0].children[0].children[0]
+  APP.head = APP.scene.children[0].children[0].children[0].children[0].children[0].children[0].children[0]
   // console.log(LeftArm);
   // APP.LeftArm.rotation.z = -100
-  console.log(APP.LeftArm);
+  console.log(APP.head);
 
   APP.target =
   document.addEventListener('mousemove', (evt) => {
@@ -39,7 +39,7 @@ const createScene = () => {
     APP.mouse.y = (- ( evt.clientY / window.innerHeight ) * 2 + 1) * 1000;
     APP.mouse.z = APP.camera.position.z
 
-    APP.LeftArm.lookAt(APP.mouse)
+    APP.head.lookAt(APP.mouse)
     // APP.LeftArm.rotation.y += 0.01
     // APP.LeftArm.matrix.lookAt(APP.camera.position, new THREE.Vector3( 0, 1, 0 ), new THREE.Vector3( 0, 1, 0 ))
 
