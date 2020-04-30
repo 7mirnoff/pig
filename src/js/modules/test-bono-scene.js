@@ -10,7 +10,6 @@ import {
 const meshs = []
 
 const createScene = () => {
-  console.log(models);
   const model = models.scene
   model.position.set(0, -0.5, 0)
   model.scale.set(20, 20, 20)
@@ -23,10 +22,8 @@ const createScene = () => {
     APP.mixer[index].timeScale = 1
     APP.action[index] = APP.mixer[index].clipAction(models.animations[index])
     APP.action[index].play()
+  })
 
-  });
-
-  console.log(APP);
   // for (const key in models) {
   //   // console.log(models);
   //   // const mesh = new THREE.Mesh(models[key].geometry, models[key].material)
@@ -36,22 +33,22 @@ const createScene = () => {
   //   // APP.scene.add(mesh)
   // }
 
-  APP.lightAmbient = new THREE.AmbientLight(0xffffff, 7.5)
-  APP.scene.add(APP.lightAmbient)
+  // APP.lightAmbient = new THREE.AmbientLight(0xffffff, 7.5)
+  // APP.scene.add(APP.lightAmbient)
 
-  APP.lightDirect = new THREE.DirectionalLight(0xFFFFFF, 3)
-  APP.lightDirect.position.set(0, 2, 5)
-  APP.lightDirect.target.position.set(0, 0, 0)
+  // APP.lightDirect = new THREE.DirectionalLight(0xFFFFFF, 3)
+  // APP.lightDirect.position.set(0, 2, 5)
+  // APP.lightDirect.target.position.set(0, 0, 0)
 
-  APP.lightDirect2 = new THREE.DirectionalLight(0xFFFFFF, 1.5)
-  APP.lightDirect2.position.set(10, 7, 5)
-  APP.lightDirect2.target.position.set(0, 0, 0)
+  // APP.lightDirect2 = new THREE.DirectionalLight(0xFFFFFF, 1.5)
+  // APP.lightDirect2.position.set(10, 7, 5)
+  // APP.lightDirect2.target.position.set(0, 0, 0)
 
-  APP.scene.add(APP.lightDirect)
-  APP.scene.add(APP.lightDirect.target)
+  // APP.scene.add(APP.lightDirect)
+  // APP.scene.add(APP.lightDirect.target)
 
-  APP.scene.add(APP.lightDirect2)
-  APP.scene.add(APP.lightDirect2.target)
+  // APP.scene.add(APP.lightDirect2)
+  // APP.scene.add(APP.lightDirect2.target)
 
   let progress = 0
   const makeAnimationStep = () => {

@@ -22,6 +22,7 @@ const loadGLTFs = (cb) => {
       src,
       // called when the resource is loaded
       function (gltf) {
+        console.log(gltf);
         models = gltf
         // models[gltf.scene.children[0].name] = gltf.scene.children[0]
 
