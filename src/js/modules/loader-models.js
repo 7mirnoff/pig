@@ -6,7 +6,7 @@ const location = window.location.href
 let models = {}
 
 const sourses = [
-  '/libs/hands.glb'
+  '/libs/all.glb'
 ]
 
 const loadGLTFs = (cb) => {

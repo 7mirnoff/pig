@@ -62,6 +62,11 @@ const createScene = () => {
   const light = new THREE.HemisphereLight(0xffffbb, 0x080820, 1);
   light.position.set(1000, 1000, 1000)
   APP.scene.add(light)
+
+  const size = 2000
+  const divisions = 50
+  const gridHelper = new THREE.GridHelper(size, divisions)
+  APP.scene.add(gridHelper)
 }
 
 export {
